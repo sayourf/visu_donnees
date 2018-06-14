@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>musique stat</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.js"></script>
+    <script src="https://unpkg.com/d3-simple-slider@0.2.1/build/d3-simple-slider.js"></script>
+</head>
+<body>
+  <h1 class="title">Support écoute musique</h1>
+  <p>
+    <!-- premier slider html -->
+    <label for="nSize">tranche d'âge = <span id="nSize-value">...</span></label>
+    <input type="range" list="tickmarks" id="nSize">
+    <!-- 2ème slider d3 -->
+    <div>
+      <label for="nSize">tranche d'âge = <span id="value2">...</span></label>
+      <div id="slider2"></div>
+    </div>
+  </p>
+  <script src="index.js"></script>
+</body>
+</html>
