@@ -116,22 +116,22 @@ var slider2 = d3.sliderHorizontal()
     .on('onchange', val => {
       d3.select("#value2").text(tickLabels[val]);
       // pour chaque catégorie, récupère la valeur de la tranche actuelle et applique le modificateur
-      data2.forEach(function(d,i){
-        console.log(d);
-        // console.log(val);
-        d3.selectAll('image')[i]
+      d3.entries(data2).forEach(function(d,i){
+        console.log(val);
+        d3.selectAll('image')
           .attr('width', function(){
             data2.forEach(function(d,i){
-              for (let p in d){
+              for (let p in d.valeurs){
+                console.log(d.valeurs[p]);
               if(p !== 'media'){
-                document.write(d[p]);
+                d.valeurs[p] = slider2[val];
+                // document.write(d[p]);
                 }
               }
             })
           });
       });
     });
-
 var g = d3.select("div#slider2").append("svg")
     .data(data)
     .attr("width", 850)
