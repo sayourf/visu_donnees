@@ -1,5 +1,6 @@
 .title{
   text-align: center;
+  margin-bottom: 40px;
 }
 
 .slider {
@@ -17,9 +18,34 @@
     margin-right: auto;
 }
 
-div{
+.intro{
+  margin-left: 30px;
+  margin-right: 30px;
   text-align: center;
+  margin-top: 30px;
+  border: 1px solid black;
 }
+.text_slider{
+  text-align: center;
+  margin-top: 30px;
+}
+p{
+  text-align: center;
+  margin-bottom : 20px;
+}
+
+/* div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 60px;
+    height: 28px;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: black;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+} */
 
 /* #slider2{
   background: #AABBFF;
