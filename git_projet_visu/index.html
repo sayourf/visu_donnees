@@ -3,23 +3,25 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>musique stat</title>
+    <title>Support écoute musique Suisse</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.js"></script>
     <script src="https://unpkg.com/d3-simple-slider@0.2.1/build/d3-simple-slider.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <h1 class="title">Support écoute musique</h1>
-  <p>
-    <!-- premier slider html -->
-    <label for="nSize">tranche d'âge = <span id="nSize-value">...</span></label>
-    <input type="range" list="tickmarks" id="nSize">
-    <!-- 2ème slider d3 -->
-    <div>
-      <label for="nSize">tranche d'âge = <span id="value2">...</span></label>
-      <div id="slider2"></div>
+  <h1 class="title">Support d'écoute musicale</h1>
+  <div class="intro">
+    <p>Visualisation des différents supports utilisés par les différentes tranches d'âge en Suisse pour écouter de la musique.Les données sont tirés de l'Office Fédéral de la Statistique (OFS) pour l'année 2014. </p>
+    <p>Modifier la position du curseur pour voir quel support a le plus d'importance pour quelle tranche d'âge au sein de la population.</p>
+  </div>
+    <div class="text_slider">
+      <label for="nSize">tranche d'âge = <span id="value2">modifier le curseur</span></label>
+      <div id="slider"></div>
     </div>
-  </p>
+    <!-- <div id="tooltip" display="none" style="position: absolute; display: none;"></div> -->
   <script src="index.js"></script>
 </body>
 </html>
