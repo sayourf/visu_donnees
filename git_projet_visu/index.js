@@ -1,6 +1,6 @@
 // Caneva SVG
-var width = 850;
-var height = 500;
+var width = 930;
+var height = 300;
 
 var canevas = d3.select("body")
   .append("svg")
@@ -8,33 +8,6 @@ var canevas = d3.select("body")
     .attr("height", height);
 
 // Données
-// const data = [
-//   {"appareil": "Radio_TV", "premiere_tranche": 88.7, "deuxieme_tranche": 92.9, "troisieme_tranche": 91.4, "quatrieme_tranche": 92.1, "cinquieme_tranche": 88.7},
-//   {"appareil": "CD_DVD", "premiere_tranche": 71.2, "deuxieme_tranche": 77.8, "troisieme_tranche": 80.3, "quatrieme_tranche": 73.9, "cinquieme_tranche": 52.5},
-//   {"appareil": "Internet", "premiere_tranche": 90.8, "deuxieme_tranche": 75.2, "troisieme_tranche": 49.1, "quatrieme_tranche": 24.1, "cinquieme_tranche": 6.7},
-//   {"appareil": "Ordinateur", "premiere_tranche": 86.5, "deuxieme_tranche": 69.7, "troisieme_tranche": 46.5, "quatrieme_tranche": 25.2, "cinquieme_tranche": 8.2},
-//   {"appareil": "Tel_portable", "premiere_tranche": 85.4, "deuxieme_tranche": 60.1, "troisieme_tranche": 35.0, "quatrieme_tranche": 13.8, "cinquieme_tranche": 4.8},
-//   {"appareil": "MP3", "premiere_tranche": 68.8, "deuxieme_tranche": 54.0, "troisieme_tranche": 36.5, "quatrieme_tranche": 16.4, "cinquieme_tranche": 5.5},
-//   {"appareil": "Vinyl_cassette", "premiere_tranche": 16.5, "deuxieme_tranche": 19.3, "troisieme_tranche": 23.1, "quatrieme_tranche": 32.2, "cinquieme_tranche": 38.2}
-// ]
-//
-// const data2 = [
-//   {"media": "Radio_TV",
-//     "valeurs": [88.7, 92.9, 91.4, 92.1, 88.7]},
-//   {"media": "CD_DVD",
-//     "valeurs": [71.2, 77.8, 80.3, 73.9, 52.5]},
-//   {"media": "Internet",
-//     "valeurs": [90.8, 75.2, 49.1, 24.1, 6.7]},
-//   {"media": "Ordinateur",
-//     "valeurs": [86.5, 69.7, 46.5, 25.2, 8.2]},
-//   {"media": "Tel_portable",
-//     "valeurs": [85.4, 60.1, 35.0, 13.8, 4.8]},
-//   {"media": "MP3",
-//     "valeurs": [68.8, 54.0, 36.5, 16.4, 5.5]},
-//   {"media": "Vinyl_cassette",
-//     "valeurs": [16.5, 19.3, 23.1, 32.2, 38.2]},
-// ];
-
 const data3 = [
   [88.7, 92.9, 91.4, 92.1, 88.7],
   [71.2, 77.8, 80.3, 73.9, 52.5],
@@ -47,69 +20,78 @@ const data3 = [
 // Label des ticks du slider d3
 const tickLabels = ['15-29', '30-44', '45-59', '60-74', '+75']
 
-// Tooltips sur les images
-// var div = canevas.append("div")
-//     .attr("class", "tooltip")
-//     .style("opacity", 0);
-
-var tooltip = canevas.append('div')
-  .style("position", "absolute")
-  .style("z-index", "10")
-  .style("visibility", "hidden")
-  .text("Radio");
-
-// importations des images
+// importations des images et ajout des labels
 var Radio = canevas.append('image')
   .attr('xlink:href', "./logos/radio.png")
-  .attr('x', '60')
-  .attr('y', '100')
-  .on("mouseover", function(){return tooltip.style("visibility", "visible");})
-  // .on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
-  .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
+  .attr('x', '70')
+  .attr('y', '50');
 
-  // .on("mouseover", function(d) {
-  //   div.transition()
-  //       // .duration(200)
-  //       .style("opacity", .9)
-  //       .text("Radio");
-  //     })
-  // .on("mouseout", function(d) {
-  //   div.transition()
-  //       .duration(500)
-  //       .style("opacity", 0);
-  // });
+var Radio_label = canevas.append('text')
+  .text("Radio / Television")
+  .attr("x", '70')
+  .attr('y', '30');
 
 var CD_DVD = canevas.append('image')
   .attr('xlink:href', "./logos/compact-disc.png")
-  .attr('x', '180')
-  .attr('y', '100')
+  .attr('x', '200')
+  .attr('y', '50')
+
+var CD_DVD_label = canevas.append('text')
+  .text("CD-ROM / DVD")
+  .attr("x", '200')
+  .attr('y', '30');
 
 var Internet = canevas.append('image')
   .attr('xlink:href', "./logos/internet.png")
-  .attr('x', '290')
-  .attr('y', '100')
+  .attr('x', '315')
+  .attr('y', '50')
+
+var Internet_label = canevas.append('text')
+  .text("Internet")
+  .attr("x", '330')
+  .attr('y', '30');
 
 var Ordinateur = canevas.append('image')
   .attr('xlink:href', "./logos/computer.png")
-  .attr('x', '400')
-  .attr('y', '100')
+  .attr('x', '435')
+  .attr('y', '50')
+
+var Ordinateur_label = canevas.append('text')
+  .text("Ordi / Tablette")
+  .attr("x", '435')
+  .attr('y', '30');
 
 var Tel_portable = canevas.append('image')
   .attr('xlink:href', "./logos/smartphone.png")
-  .attr('x', '500')
-  .attr('y', '100')
+  .attr('x', '555')
+  .attr('y', '50')
+
+var Tel_portable_label = canevas.append('text')
+  .text("Téléphone")
+  .attr("x", '560')
+  .attr('y', '30');
 
 var MP3 = canevas.append('image')
   .attr('xlink:href', "./logos/ipod.png")
-  .attr('x', '610')
-  .attr('y', '100')
+  .attr('x', '680')
+  .attr('y', '50')
+
+var MP3_label = canevas.append('text')
+  .text("Baladeur MP3")
+  .attr("x", '670')
+  .attr('y', '30');
 
 var Vinyl_cassette = canevas.append('image')
   .attr('xlink:href', "./logos/cassette.jpg")
-  .attr('x', '730')
-  .attr('y', '100')
+  .attr('x', '805')
+  .attr('y', '50')
 
-// SLIDER:
+var Vinyl_cassette_label = canevas.append('text')
+  .text("Vinyles / Cassettes")
+  .attr("x", '790')
+  .attr('y', '30');
+
+// SLIDER et modification taille icones
 var slider = d3.sliderHorizontal()
     .min(0)
     .max(4)
@@ -119,7 +101,7 @@ var slider = d3.sliderHorizontal()
     .width(500)
     // etape1: selection de la catégorie de la coche du slider correspondant à une catégorie
     .on('onchange', val => {
-      d3.select("#value2").text(tickLabels[val]);
+      d3.select("#value").text(tickLabels[val]);
 
       radValue = data3[0][val]
       if (radValue < 10)
@@ -283,21 +265,6 @@ var slider = d3.sliderHorizontal()
       MP3.attr('width', data3[5][val]);
       Vinyl_cassette.attr('width', data3[6][val]);
 
-      // pour chaque catégorie, récupère la valeur de la tranche actuelle et applique le modificateur
-      /*data2.forEach(function(d,i){
-        console.log(d);
-        // console.log(val);
-        canevas.selectAll('image')
-          .attr('width', function(){
-            data2.forEach(function(d,i){
-              for (let p in d){
-              if(p !== 'media'){
-                document.write(d[p]);
-                }
-              }
-            })
-          });
-      });*/
     });
 
 var g = d3.select("div#slider").append("svg")
@@ -306,19 +273,8 @@ var g = d3.select("div#slider").append("svg")
     .attr("height", 80)
     .append("g")
     .attr("transform", "translate(200,30)")
-    // .enter().append('image');
     .on('onchange', val => {
       console.log(val);//   data.sort(function(a){return (a.premiere_tranche) = val})
     });
 
 g.call(slider);
-
-// var modif_taille = canevas.selectAll('image')
-//   .data(data)
-//   .enter().append('image')
-//   .on('onchange', val => {
-//     console.log(val)//data.sort(function(a){return (a.premiere_tranche) = val})
-//   });
-
-// const total = data.filter(d => d.premiere_tranche>50).length;
-// console.log(total);
