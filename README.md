@@ -11,7 +11,7 @@ Les catégorisations utilisées pour différencier les supports ont été défin
 - Vinyles et Cassettes
 
 Traitement des données:
-Les données étaient classées selon septs tableaux à l'intérieur desquels l'on pouvait voir des interval de confiance, une distinction hommes/femmes ainsi qu'une distinction selon les cinq tranches d'âges. Les données associées à l'âge ont été extrait et remis dans une matrice contenant en ligne les cinq tranches d'âge et en colonne les septs supports d'écoute de musique. 
+Les données étaient classées selon sept tableaux à l'intérieur desquels l'on pouvait voir les intervals de confiance, des chiffres concernant la distinction hommes/femmes ainsi que ceux ayant trait à la distinction selon l'âge. Les données associées à l'âge ont été extrait et remis dans une matrice contenant en ligne les cinq tranches d'âge et en colonne les septs supports d'écoute de musique. 
 
 source: https://www.bfs.admin.ch/bfs/fr/home/statistiques/catalogues-banques-donnees/tableaux.assetdetail.256358.html
 
